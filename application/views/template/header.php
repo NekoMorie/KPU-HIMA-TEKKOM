@@ -14,9 +14,3 @@
   <link rel='stylesheet prefetch' href='<?=base_url()?>assets/font-awesome-4.7.0/css/font-awesome.min.css'>
 </head>
 <body>
-<div class="header card text-xl-center text-center fw-bold fw-light" style="text-align: center; background-color: #386BC0;">
-        <div class="identitas">
-            <h1>IDENTITAS PENGGUNA <br> Davi Hanan Luthfi Abiyyu - 2205152 <br> 1B - Teknik Komputer</h1> 
-        </div>
-        <a href="#"><button class=" btn btn-danger"><i class="fa fa-sign-out"></i>Keluar</button></a>
-    </div>

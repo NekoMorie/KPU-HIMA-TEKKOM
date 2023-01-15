@@ -1,3 +1,8 @@
+<div class="header card text-xl-center text-center fw-bold fw-light" style="text-align: center; background-color: #386BC0;">
+        <div class="identitas">
+            <h1 class="text-uppercase">Hasil Perolehan suara <br> ketua & wakil ketua <br> DE Hima tekkom 2023 </h1>
+        </div>
+    </div>
 <div class="container-fluid py-4">
         <div class="row">
           <div class="col-12">
@@ -16,42 +21,36 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php
+                        foreach ($paslon as $ps) :
+                      ?>
                         <tr>
                           <td class="cardo d-flex p-2">
                               <div class="imga col-12 p-2">
-                                <img src="<?=base_url()?>assets/image/paslon/paslon.jpg" class="avatar avatar-sm rounded-circle me-2" alt="" width="10%">
+                                <img src="<?=base_url()?>assets/image/paslon/<?= $ps['foto']?>" class="avatar avatar-sm rounded-circle me-2" alt="" width="10%">
                               </div>
                               <div class="my-auto p-2">
-                                <h6 class="mb-0 text-sm">Wahyu Fahrizal Al Fayyadh & Farhan Naufal Nurdiansyah l</h6>
+                                <h6 class="mb-0 text-sm"><?= $ps['calon']?></h6>
                               </div>
                           </td>
+                          <?php
+                            $suara = $this->view_model->getSuara($ps['id']);
+                            if ($totalsuara <> 0) {
+                              $persen = $suara / $totalsuara * 100;
+                            } else {
+                              $persen = 0;
+                            }
+                          ?>
                           <td class="align-middle text-center">
-                            <p class="text-sm font-weight-bold mb-0">70</p>
+                            <p class="text-sm font-weight-bold mb-0"><?= $suara?></p>
                           </td>
                           <td class="align-middle text-center">
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 70%; background-color:#386BC0;" >70%</div>
+                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="<?= $persen?>" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: <?= $persen?>%; background-color:#386BC0;" ><?= $persen?>%</div>
                             </div>
                           </td>
                         </tr>
-                        <tr>
-                            <td class="cardo d-flex p-2">
-                                <div class="imga col-12">
-                                  <img src="<?=base_url()?>assets/image/paslon/default.jpg" class="avatar avatar-sm rounded-circle me-2" alt="" width="10%">
-                                </div>
-                                <div class="my-auto">
-                                  <h6 class="mb-0 text-sm">Kotak Kosong</h6>
-                                </div>
-                            </td>
-                            <td class="align-middle text-center">
-                              <p class="text-sm font-weight-bold mb-0">25</p>
-                            </td>
-                            <td class="align-middle text-center">
-                              <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                  <div class="progress-bar" style="width: 25%; background-color:#386BC0;" >25%</div>
-                              </div>
-                            </td>
-                          </tr>
+                        <?php  endforeach;?>
                     </tbody>
                   </table>
                 </div>
@@ -59,22 +58,35 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-md-center">
-            <div class="col-6">
-                <div class="card text-bg-success mb-3" >
-                    <div class="card-header text-uppercase align-middle text-center">Jumlah Peserta</div>
-                    <div class="card-body text-center">
-                      <h5 class="card-title">100</h5>
+        <?php 
+          // $gk_Adasuara = $this->view_model->getVote();
+        ?>
+        <div class="container">
+          <div class="row justify-content-md-center">
+              <div class="col-4">
+                  <div class="card text-bg-secondary mb-3" >
+                      <div class="card-header text-uppercase align-middle text-center">Jumlah Peserta</div>
+                      <div class="card-body text-center">
+                        <h5 class="card-title"><?= $peserta?></h5>
+                      </div>
                     </div>
-                  </div>
-            </div>
-            <div class="col-6">
-                <div class="card text-bg-secondary mb-3" >
-                    <div class="card-header text-uppercase align-middle text-center">Belum memberikan suara</div>
-                    <div class="card-body text-center">
-                      <h5 class="card-title">5</h5>
+              </div>
+              <div class="col-4">
+                  <div class="card text-bg-danger mb-3" >
+                      <div class="card-header text-uppercase align-middle text-center">Belum memberikan suara</div>
+                      <div class="card-body text-center">
+                        <h5 class="card-title"><?=$suara?></h5>
+                      </div>
                     </div>
-                  </div>
-            </div>
+              </div>
+              <div class="col-4">
+                  <div class="card text-bg-success mb-3" >
+                      <div class="card-header text-uppercase align-middle text-center">sudah memberikan suara</div>
+                      <div class="card-body text-center">
+                        <h5 class="card-title"><?= $totalsuara?></h5>
+                      </div>
+                    </div>
+              </div>
+          </div>
         </div>
     </div>
