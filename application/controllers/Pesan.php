@@ -5,8 +5,9 @@ class Pesan extends CI_Controller
 {
     public function index()
 	{
-        $this->load->view('template/header.php');
-        $this->load->view('tampilan/pesan.php');
+        $data['title'] = 'Pesan';
+        $this->load->view('template/header.php',$data);
+        $this->load->view('tampilan/pesan.php',$data);
         $this->load->view('template/footer.php');
     }
 }

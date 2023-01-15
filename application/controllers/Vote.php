@@ -22,13 +22,14 @@ class Vote extends CI_Controller
         $data['peserta'] = $this->view_model->getId($this->session->userdata('user_id'));
         $data['statusvote'] = $this->view_model->getVote($this->session->userdata('user_id'));
         $data['paslon'] = $this->view_model->getPaslon();
+        $data['title'] = 'Vote';
         // var_dump($data);
         // die();
 
         $this->form_validation->set_rules('vote', 'Vote', 'required');
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Halaman Vote';
-            $this->load->view('template/header.php');
+            $this->load->view('template/header.php',$data);
             $this->load->view('tampilan/vote.php',$data);
             $this->load->view('template/footer.php');
         } else {

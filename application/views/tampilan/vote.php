@@ -12,14 +12,14 @@
       ?>
       <div class="container text-center">
         <form method="post" action="">
-          <section>
+          <section class="row">
             <?php
-              foreach ($paslon as $ps) :
+              foreach ($paslon as  $ps) :
             ?>
-            <div>
+            <div class="col-lg-6">
               <input type="radio" id="control_0<?= $ps['no_urut']?>" name="vote" value="<?= $ps['no_urut']?>">
               <label for="control_0<?= $ps['no_urut']?>">
-                <div class="card">
+                <div class="card" style="min-height: 650px;">
                   <div class="row">
                     <div class="col-12">
                         <div class="img"><img src="<?=base_url()?>assets/image/paslon/<?= $ps['foto']?>" alt="" class="avatar avatar-sm rounded-circle me-2"></div>

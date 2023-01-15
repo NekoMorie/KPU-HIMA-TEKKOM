@@ -15,8 +15,8 @@ class Statistik extends CI_Controller
         $data['paslon'] = $this->view_model->getPaslon();
         $data['totalsuara'] = $this->view_model->getAllSuara();
         $data['peserta'] = $this->view_model->getAllPeserta();
-        $data['judul'] = 'Halaman Statistik';
-        $this->load->view('template/header.php');
+        $data['title'] = 'Statistik';
+        $this->load->view('template/header.php',$data);
         $this->load->view('tampilan/statistik.php', $data);
         $this->load->view('template/footer.php');
     }

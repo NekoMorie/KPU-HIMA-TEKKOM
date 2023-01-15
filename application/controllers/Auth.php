@@ -14,8 +14,9 @@ class Auth extends CI_Controller
 	public function index()
 	{
 		$this->form_validation->set_rules('token', 'Token', 'required');
+		$data['title']= 'Login';
 		if ($this->form_validation->run() == false) {
-			$this->load->view('auth/login');
+			$this->load->view('auth/login',$data);
 		} else {
 			$this->_login();
 		}
