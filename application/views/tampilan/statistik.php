@@ -61,32 +61,32 @@
         <?php 
           // $gk_Adasuara = $this->view_model->getVote();
         ?>
-        <div class="container">
-          <div class="row justify-content-md-center">
-              <div class="col-4">
-                  <div class="card text-bg-secondary mb-3" >
-                      <div class="card-header text-uppercase align-middle text-center">Jumlah Peserta</div>
-                      <div class="card-body text-center">
-                        <h5 class="card-title"><?= $peserta?></h5>
-                      </div>
-                    </div>
-              </div>
-              <div class="col-4">
-                  <div class="card text-bg-danger mb-3" >
-                      <div class="card-header text-uppercase align-middle text-center">Belum memberikan suara</div>
-                      <div class="card-body text-center">
-                        <h5 class="card-title"><?=$suara?></h5>
-                      </div>
-                    </div>
-              </div>
-              <div class="col-4">
-                  <div class="card text-bg-success mb-3" >
-                      <div class="card-header text-uppercase align-middle text-center">sudah memberikan suara</div>
-                      <div class="card-body text-center">
-                        <h5 class="card-title"><?= $totalsuara?></h5>
-                      </div>
-                    </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="card text-bg-secondary mb-3" >
+                <div class="card-header text-uppercase align-middle text-center">Jumlah Peserta</div>
+                <div class="card-body text-center">
+                  <h5 class="card-title"><?= $peserta?></h5>
+                </div>
               </div>
           </div>
-        </div>
+          <div class="col-md-4">
+              <div class="card text-bg-danger mb-3" >
+                <div class="card-header text-uppercase align-middle text-center">Belum memberikan suara</div>
+                <div class="card-body text-center">
+                  <h5 class="card-title"><?=$suara?></h5>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card text-bg-success mb-3" >
+                <div class="card-header text-uppercase align-middle text-center">sudah memberikan suara</div>
+                <div class="card-body text-center">
+                  <h5 class="card-title"><?= $totalsuara?></h5>
+                </div>
+              </div>
+          </div>
+      </div>
     </div>
